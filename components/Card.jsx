@@ -45,7 +45,7 @@ const BasicCard = () => {
   if (!itemExists) {
    itemArray = [...favData, item];
    localStorage.setItem("favoriteList", JSON.stringify(itemArray));
-   setFavData(itemArray); // Update the state to reflect the changes
+   setFavData(itemArray);
   }
  };
 
@@ -98,7 +98,9 @@ const BasicCard = () => {
          </Typography>
         </CardContent>
         <CardActions disableSpacing>
-         <IconButton onClick={() => handleFavorite(item)} aria-label="add to favorites">
+         <IconButton
+          color={favData.some(fav => fav.id === item.id) ? "success" : "default"}
+          onClick={() => handleFavorite(item)} aria-label="add to favorites">
           <FavoriteIcon />
          </IconButton>
          <ShareComponets
