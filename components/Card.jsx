@@ -68,7 +68,7 @@ const BasicCard = () => {
    <Box>
     <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
      {productsData.map((item) => (
-      <Grid key={item?.id} item xs={2}>
+      <Grid key={item?.id} item xs={12} sm={6} md={3} lg={3} xl={2}>
        <Card sx={{ maxWidth: 345 }}>
         <CardHeader
          avatar={
